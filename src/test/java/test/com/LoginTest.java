@@ -33,10 +33,11 @@ public class LoginTest {
         
 
         //executes only once before all testes
-        System.setProperty("webdriver.chrome.driver", "d:\\qa\\data\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://qa-id.mybenefitexpress.com//account//login");
-        
+        driver.get("https://qa-mbe50.mybenefitexpress.com/home");
+                    
+                    //https://qa-id.mybenefitexpress.com//account//login
     }
     
     @AfterClass
@@ -75,8 +76,10 @@ public class LoginTest {
     element2.sendKeys("test");
     
     WebElement element3=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]/div/form/div[4]/button"));
-    assertNotNull(element3);
-    element3.submit();
+        System.out.println("the element name "+element3.getText());
+    //assertNotNull(element3);
+    element3.click();
+    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         
     }
     
