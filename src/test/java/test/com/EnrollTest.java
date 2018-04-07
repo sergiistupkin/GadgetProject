@@ -13,29 +13,24 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import static test.com.LoginTest.driver;
 
 /**
  *
  * @author Sergii
  */
-public class LoginTest {
-    static WebDriver driver;
-    String title;
+public class EnrollTest {
     
-    public LoginTest() {
+    public EnrollTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-        //executes only once before all testes
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://qa-mbe50.mybenefitexpress.com/home");
-                    
-                    //https://qa-id.mybenefitexpress.com//account//login
     }
     
     @AfterClass
@@ -51,9 +46,6 @@ public class LoginTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
     @Test
     public void testopenpage() {
     
@@ -68,17 +60,5 @@ public class LoginTest {
     WebElement element1=driver.findElement(By.id("Username"));
     //assertNotNull(element1);
     element1.sendKeys("sandra123");
-        
-    WebElement element2=driver.findElement(By.id("Password"));
-   // assertNotNull(element2);
-    element2.sendKeys("test");
-    
-    WebElement element3=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]/div/form/div[4]/button"));
-        System.out.println("the element name "+element3.getText());
-    //assertNotNull(element3);
-    element3.click();
-    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        
     }
-    
-    }
+}
