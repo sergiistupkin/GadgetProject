@@ -23,8 +23,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
  */
 public class LoginTest {
     static WebDriver driver;
-    String title;
-    
+       
     public LoginTest() {
     }
     
@@ -34,8 +33,6 @@ public class LoginTest {
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://qa-mbe50.mybenefitexpress.com/home");
-                    
-                    //https://qa-id.mybenefitexpress.com//account//login
     }
     
     @AfterClass
@@ -55,9 +52,9 @@ public class LoginTest {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void testopenpage() {
+    public void TestOpenPage() {
     
-    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     assertNotNull(driver);
     }
     
@@ -66,19 +63,24 @@ public class LoginTest {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     
     WebElement element1=driver.findElement(By.id("Username"));
-    //assertNotNull(element1);
+    assertNotNull(element1);
     element1.sendKeys("sandra123");
         
     WebElement element2=driver.findElement(By.id("Password"));
-   // assertNotNull(element2);
+    assertNotNull(element2);
     element2.sendKeys("test");
     
     WebElement element3=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]/div/form/div[4]/button"));
-        System.out.println("the element name "+element3.getText());
-    //assertNotNull(element3);
+    System.out.println("the element name "+element3.getText());
+    assertNotNull(element3);
     element3.click();
-    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        
+    }
+    
+    @Test
+    public void TestWelcomePage() {
+    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+    driver.getTitle();
+    assertEquals(driver.getTitle(), "Benefit Express");
     }
     
     }

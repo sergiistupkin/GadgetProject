@@ -47,9 +47,9 @@ public class EnrollTest {
     }
 
     @Test
-    public void testopenpage() {
+    public void TestOpenPage() {
     
-    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     assertNotNull(driver);
     }
     
@@ -58,7 +58,23 @@ public class EnrollTest {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     
     WebElement element1=driver.findElement(By.id("Username"));
-    //assertNotNull(element1);
+    assertNotNull(element1);
     element1.sendKeys("sandra123");
+        
+    WebElement element2=driver.findElement(By.id("Password"));
+    assertNotNull(element2);
+    element2.sendKeys("test");
+    
+    WebElement element3=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]/div/form/div[4]/button"));
+    System.out.println("the element name "+element3.getText());
+    assertNotNull(element3);
+    element3.click();
+    }
+    
+    @Test
+    public void Enroll() {
+    
+    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+    assertNotNull(driver);
     }
 }
