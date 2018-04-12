@@ -125,48 +125,61 @@ public class EnrollTest {
 //    driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-my-dependents-form/div/div/form/div[2]/button[1]")).click();   
 //    
     //Continue   
-    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]")));
-    WebElement element12=driver.findElement(By.partialLinkText("Save and Continue"));
+    new WebDriverWait(driver, 40).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]")));
+    WebElement element12=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]"));
     assertNotNull(element12);
     element12.click();
     element12.click();
     
-    //let's do it
-    WebElement element13=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div/div/div/div/div/div/a"));
-    assertNotNull(element13);
-    element13.click();
-    driver.findElement(By.name("postalCode")).sendKeys("60008");
-    driver.findElement(By.name("salary")).sendKeys("95700");
-    driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[2]/div/div[2]/div/div/div[2]/div/div/button[1]")).click();
-    
-    //radiobuttons
-    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[3]/div/div/table/tbody/tr[2]/td[6]/div[1]/label/input")));
-    WebElement element14=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[3]/div/div/table/tbody/tr[2]/td[6]/div[1]/label/input"));
-    element14.click();
-    element14.click();
-    
-    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[3]/div/div/table/tbody/tr[3]/td[6]/div[1]/label/input")));
-    WebElement element15=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[3]/div/div/table/tbody/tr[3]/td[6]/div[1]/label/input"));
-    element15.click();
-    element15.click();
-    
-    //Continue
-    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]")));
-    WebElement element16=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]"));
-     assertNotNull(element14);
-    element16.click();
-    element16.click();
-   
-    //let's do it
-    WebElement element17=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div/div/div/div/div/div/a"));
+     //Go to Confirmation
+    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a")));
+    WebElement element17=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a"));
     assertNotNull(element17);
     element17.click();
+    element17.click();
     
-    //Continue
-    WebElement element18=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]"));
-    assertNotNull(element18);
+    //Close
+    new WebDriverWait(driver, 40).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-more-enrollment-modal/div/div/div[3]/button[2]")));
+    WebElement element18=driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-more-enrollment-modal/div/div/div[3]/button[2]"));
+    //assertNotNull(element18);
     element18.click();
     element18.click();
+    
+    
+//    //let's do it
+//    WebElement element13=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div/div/div/div/div/div/a"));
+//    assertNotNull(element13);
+//    element13.click();
+//    driver.findElement(By.name("postalCode")).sendKeys("60008");
+//    driver.findElement(By.name("salary")).sendKeys("95700");
+//    driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[2]/div/div[2]/div/div/div[2]/div/div/button[1]")).click();
+//    
+//    //radiobuttons
+//    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[3]/div/div/table/tbody/tr[2]/td[6]/div[1]/label/input")));
+//    WebElement element14=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[3]/div/div/table/tbody/tr[2]/td[6]/div[1]/label/input"));
+//    element14.click();
+//    element14.click();
+//    
+//    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[3]/div/div/table/tbody/tr[3]/td[6]/div[1]/label/input")));
+//    WebElement element15=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/ng-component/div/div[2]/div[3]/div/div/table/tbody/tr[3]/td[6]/div[1]/label/input"));
+//    element15.click();
+//    element15.click();
+//    
+//    //Continue
+//    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]")));
+//    WebElement element16=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]"));
+//     assertNotNull(element14);
+//    element16.click();
+//    element16.click();
+//   
+//    //Go to Confirmation
+//    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a")));
+//    WebElement element17=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a"));
+//    assertNotNull(element17);
+//    element17.click();
+//    element17.click();
+//    
+//    
     
     
     
