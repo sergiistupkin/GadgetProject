@@ -26,15 +26,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  * @author Elena
  */
-    public class ContactUs {
+    public class ID3ContactUs {
     static WebDriver driver;
     
-    public ContactUs() {
+    public ID3ContactUs() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-        System.setProperty("webdriver.chrome.driver", "C:\\software\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\data\\chromedriver.exe");
         //driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         driver = new ChromeDriver();
         driver.get("https://qa-mbe50.mybenefitexpress.com/home");

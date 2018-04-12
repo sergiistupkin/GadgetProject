@@ -5,6 +5,7 @@
  */
 package test.com;
 
+
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -15,7 +16,6 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,11 +24,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  * @author Ekaterina
  */
-public class EmailUsTest {
+public class ID14 {
     static WebDriver driver;
-    String title;
-    
-    public EmailUsTest() {
+    public ID14() {
     }
     
     @BeforeClass
@@ -48,7 +46,7 @@ public class EmailUsTest {
     
     @AfterClass
     public static void tearDownClass() {
-        //driver.quit();
+        driver.quit();
     }
     
     @Before
@@ -58,9 +56,6 @@ public class EmailUsTest {
     @After
     public void tearDown() {
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
     
     
     @Test
@@ -86,17 +81,25 @@ public class EmailUsTest {
     assertNotNull(element3);
     element3.click();
 
-    
-    // click on contact us
-    WebElement element4=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/nav/div/div[2]/app-top-menu/div/app-contact-us/div/a"));  
+     // click on My Plans
+    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"3\"]/a")));
+    WebElement element4=driver.findElement(By.xpath("//*[@id=\"3\"]/a"));
     assertNotNull(element4);
-    element4.click();
-    
-        // click on Email Us
-    WebElement element5=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/nav/div/div[2]/app-top-menu/div/app-contact-us/div/ul/li[2]/a"));  
+    element4.click();   
+     
+     // click on Plan Details: Platinum-PPO High
+    WebElement element5=driver.findElement(By.xpath("//*[@id=\"dvMyPlansBody\"]/div/div[2]/div[1]/div/app-my-plan-item/div/div/button"));  
     assertNotNull(element5);
-    element5.click();
+    element5.click();   
     
-
+    // click on Plan Info
+    WebElement element6=driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-plan-detail/div/div/div[3]/div/ul/li[2]/a"));  
+    assertNotNull(element6);
+    element6.click();  
+    
+    // Assertion
+    String actualString = driver.findElement(By.xpath("//*[@id=\"planInfo\"]/div/div/table/tbody/tr[3]/td[1]/div")).getText();
+    assertTrue(actualString.contains("Maternity Support Nurse"));
+    
     }
 }

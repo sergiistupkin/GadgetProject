@@ -26,9 +26,9 @@ import org.openqa.selenium.support.ui.Select;
  *
  * @author Roma
  */
-public class SwitchLang {
+public class ID2SwitchLang {
    static WebDriver driver;
-    public SwitchLang() {
+    public ID2SwitchLang() {
     }
     
     @BeforeClass

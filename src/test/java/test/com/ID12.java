@@ -16,28 +16,39 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
- * @author Sergii
+ * @author Ekaterina
  */
-public class LoginTest {
+public class ID12 {
     static WebDriver driver;
-       
-    public LoginTest() {
+    String title;
+    
+    public ID12() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        
+
         //executes only once before all testes
-        System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
-        driver = new ChromeDriver();
+        //System.setProperty("webdriver.chrome.driver", "C:\\data\\chromedriver.exe");
+        //driver = new ChromeDriver();
+        
+        System.setProperty("webdriver.gecko.driver", "C:\\Data\\geckodriver.exe");
+        driver = new FirefoxDriver();
+        
         driver.get("https://qa-mbe50.mybenefitexpress.com/home");
+        
     }
     
     @AfterClass
     public static void tearDownClass() {
-        //driver.quit();
+        driver.quit();
     }
     
     @Before
@@ -47,14 +58,12 @@ public class LoginTest {
     @After
     public void tearDown() {
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
+    
+    
     @Test
     public void TestOpenPage() {
     
-    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     assertNotNull(driver);
     }
     
@@ -70,17 +79,23 @@ public class LoginTest {
     assertNotNull(element2);
     element2.sendKeys("test");
     
-    WebElement element3=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]/div/form/div[4]/button"));
-    System.out.println("the element name "+element3.getText());
+    WebElement element3=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]/div/form/div[4]/button"));  
     assertNotNull(element3);
     element3.click();
-    }
+
+     // click on Benefits Profile
+    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"4\"]/a")));
+    WebElement element4=driver.findElement(By.xpath("//*[@id=\"4\"]/a"));
+    assertNotNull(element4);
+    element4.click();   
+     
+     // click on Dependents
+    WebElement element5=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/app-benefits-profile/div/div/div/div/div[2]/div/div[2]/a/span"));  
+    assertNotNull(element5);
+    element5.click();   
     
-    @Test
-    public void TestWelcomePage() {
-    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-    driver.getTitle();
-    assertEquals(driver.getTitle(), "Benefit Express");
+    // Assertion
+    String actualString = driver.findElement(By.xpath("//*[@id=\"dvDependents\"]/div[1]/div")).getText();
+    assertTrue(actualString.contains("Dependents"));
     }
-    
-    }
+}

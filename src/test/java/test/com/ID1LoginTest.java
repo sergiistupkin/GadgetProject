@@ -5,7 +5,6 @@
  */
 package test.com;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,20 +16,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-
 
 /**
  *
  * @author Sergii
  */
-public class Search {
+public class ID1LoginTest {
     static WebDriver driver;
-    public Search() {
+       
+    public ID1LoginTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        //executes only once before all testes
         System.setProperty("webdriver.chrome.driver", "c:\\data\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://qa-mbe50.mybenefitexpress.com/home");
@@ -49,8 +48,18 @@ public class Search {
     public void tearDown() {
     }
 
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
     @Test
-    public void TestLogin() {
+    public void TestOpenPage() {
+    
+    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+    assertNotNull(driver);
+    }
+    
+    @Test
+    public void TestLoginPassword() {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     
     WebElement element1=driver.findElement(By.id("Username"));
@@ -62,44 +71,16 @@ public class Search {
     element2.sendKeys("test");
     
     WebElement element3=driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[1]/div[1]/div[1]/div/form/div[4]/button"));
-    //System.out.println("the element name "+element3.getText());
+    System.out.println("the element name "+element3.getText());
     assertNotNull(element3);
     element3.click();
-       
-    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-    //driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);  
-    
-    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    
-    WebElement element4=driver.findElement(By.name("searchText"));
-    assertNotNull(element4);
-    element4.sendKeys("form");
-    
-    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    driver.findElement(By.xpath("//*[@id=\"widgetsColumn2\"]/app-document-search-panel/app-document-search-shared/div/div[2]/form/div/div/button")).click();
-    
-//    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-//    driver.findElement(By.xpath("//*[@id=\"result-entry\"]/td[1]/a")).click();
     }
     
+    @Test
+    public void TestWelcomePage() {
+    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+    driver.getTitle();
+    assertEquals(driver.getTitle(), "Benefit Express");
+    }
     
-    //driver.findElement(By.xpath("")).click();
-//    
-//    driver.switchTo().activeElement();
-//    
-//    String text=driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-document-search-result/div/div/div[1]/h2")).getText();
-//    assertEquals(text, "Search Results");
-//        
-//        
-//    
-//    List<WebElement> elements=driver.findElements(By.className("btn-mbe btn-teal"));
-//        WebElement element5 = elements.get(0);
-//        element5.click();
-
-//    WebElement element5=driver.findElement(By.partialLinkText("Add Emergency Contact"));
-//    assertNotNull(element5);
-//    element5.click();
-
-//    
-    
-}
+    }

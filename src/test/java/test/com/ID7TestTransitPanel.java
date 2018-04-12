@@ -18,16 +18,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import static test.com.LoginTest.driver;
+
 
 /**
  *
  * @author Elham
  */
-public class TestTransitPanel {
+public class ID7TestTransitPanel {
     static WebDriver driver;
     String title;
-    public TestTransitPanel() {
+    public ID7TestTransitPanel() {
     }
     
     @BeforeClass

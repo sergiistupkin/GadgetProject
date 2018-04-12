@@ -29,10 +29,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  * @author Roma
  */
-public class EmergencyContactTest {
+public class ID5ReadFileEmergencyContactTest {
     static WebDriver driver;
     String CSV_PATH="C:\\data\\Detail.csv"; 
-    public EmergencyContactTest() {
+    public ID5ReadFileEmergencyContactTest() {
     }
     
     @BeforeClass
@@ -44,7 +44,7 @@ public class EmergencyContactTest {
     
     @AfterClass
     public static void tearDownClass() {
-         //driver.quit();
+         driver.quit();
     }
     
     @Before

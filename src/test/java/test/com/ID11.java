@@ -24,11 +24,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  * @author Ekaterina
  */
-public class TotalCompensationTest {
+public class ID11 {
     static WebDriver driver;
     String title;
     
-    public TotalCompensationTest() {
+    public ID11() {
     }
     
     @BeforeClass
@@ -48,7 +48,7 @@ public class TotalCompensationTest {
     
     @AfterClass
     public static void tearDownClass() {
-        //driver.quit();
+        driver.quit();
     }
     
     @Before
@@ -58,9 +58,6 @@ public class TotalCompensationTest {
     @After
     public void tearDown() {
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
     
     
     @Test
@@ -86,22 +83,21 @@ public class TotalCompensationTest {
     assertNotNull(element3);
     element3.click();
 
-
-     // click on enrollment tools 2
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"headingOne\"]/h4/a")));
-    WebElement element4=driver.findElement(By.xpath("//*[@id=\"headingOne\"]/h4/a"));
-    element4.click();
+     // click on Benefits Profile
+    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"4\"]/a")));
+    WebElement element4=driver.findElement(By.xpath("//*[@id=\"4\"]/a"));
+    assertNotNull(element4);
+    element4.click();   
     
-    // click on TCS
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"hl_0\"]/div/app-client-content/app-view-more-content/div/div/ul/li[6]/a")));
-    WebElement element5=driver.findElement(By.xpath("//*[@id=\"hl_0\"]/div/app-client-content/app-view-more-content/div/div/ul/li[6]/a"));
-    element5.click();      
-
-    // verification
-    String actualString = driver.findElement(By.xpath("//*[@id=\"dvTcsBody\"]/div/div[2]/div/p[3]")).getText();
-    assertTrue(actualString.contains("Your Total Compensation program is made up"));
-
+    //*[@id="3"]/a
+     
+     // click on Benefits Information
+    WebElement element5=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/app-benefits-profile/div/div/div/div/div[2]/div/div[1]/a/span"));  
+    assertNotNull(element5);
+    element5.click();   
+    
+    // Assertion
+    String actualString = driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/app-breadcrumbs/ol/li[2]")).getText();
+    assertTrue(actualString.contains("Benefits Information"));
     }
 }

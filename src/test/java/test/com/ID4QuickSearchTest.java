@@ -25,9 +25,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  * @author Roma
  */
-public class QuickSearchTest {
+public class ID4QuickSearchTest {
     static WebDriver driver;
-    public QuickSearchTest() {
+    public ID4QuickSearchTest() {
     }
     
      @BeforeClass
@@ -40,7 +40,7 @@ public class QuickSearchTest {
     
     @AfterClass
     public static void tearDownClass() {
-        //driver.quit();
+        driver.quit();
     }
     
     @Before

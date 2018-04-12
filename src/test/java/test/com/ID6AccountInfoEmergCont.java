@@ -13,17 +13,18 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import static test.com.LoginTest.driver;
+
 
 /**
  *
  * @author Sergii
  */
-public class AccountInfo {
-    
-    public AccountInfo() {
+public class ID6AccountInfoEmergCont {
+    static WebDriver driver;
+    public ID6AccountInfoEmergCont() {
     }
     
     @BeforeClass
