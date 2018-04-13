@@ -31,7 +31,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class ID5ReadFileEmergencyContactTest {
     static WebDriver driver;
-    String CSV_PATH="C:\\data\\Detail.csv"; 
+    String CSV_PATH=".\\src\\Detail.csv"; 
     public ID5ReadFileEmergencyContactTest() {
     }
     
