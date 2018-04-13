@@ -67,84 +67,84 @@ public class ID8EnrollTest {
     assertNotNull(element3);
     element3.click();
        
-     //enroll   
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    driver.findElement(By.partialLinkText("Enroll Now")).click();
-    
-    //driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-    
-    //click Change button
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"btnEnroll\"]")));
-    driver.findElement(By.id("btnEnroll")).click();
-    
-    
-    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-    WebElement element5=driver.findElement(By.name("chkAcknowledgement"));
-     assertNotNull(element5);
-    element5.click();
-    
-    driver.findElement(By.partialLinkText("Save and Continue")).click();
-      //add emergency contact
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
-    driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/app-emergency-contacts-enrollment/div/app-emergency-contacts/div/a")).click();   
-    driver.findElement(By.name("lastName")).sendKeys("Jonson");
-    driver.findElement(By.name("firstName")).sendKeys("Mike");
-    driver.findElement(By.name("relation")).sendKeys("Supose");
-    driver.findElement(By.name("homePhone")).sendKeys("7774445566");
-    driver.findElement(By.name("homeIntCode")).sendKeys("777");
-    driver.findElement(By.name("homeComments")).sendKeys("Test Home Comment");
-    driver.findElement(By.name("workPhone")).sendKeys("7776667788");
-    driver.findElement(By.name("workIntCode")).sendKeys("777");
-    driver.findElement(By.name("workComments")).sendKeys("Test Work Comment");
-    driver.findElement(By.name("mobilePhone")).sendKeys("7770008899");
-    driver.findElement(By.name("mobileIntCode")).sendKeys("777");
-    driver.findElement(By.name("mobileComments")).sendKeys("Test Mobile Comment");
-    driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-emergency-contacts-form-modal/form/div/div/div[3]/button[1]")).click();
-
-    WebElement element6=driver.findElement(By.partialLinkText("Save and Continue"));
-     assertNotNull(element6);
-    element6.click();
-    
-      //add dependent
-    WebElement element7=driver.findElement(By.id("submitButton"));
-     assertNotNull(element7);
-    element7.click();
-    WebElement e8=driver.findElement(By.id("foreignNational"));
-        Select s1=new Select(e8);
-        s1.selectByVisibleText("Yes");
-    driver.findElement(By.id("ssn")).sendKeys("111444459");
-    driver.findElement(By.id("firstName")).sendKeys("Michel");
-    driver.findElement(By.id("lastName")).sendKeys("Thomson");
-    driver.findElement(By.id("birthDate")).sendKeys("07/03/1990");
-    WebElement e9=driver.findElement(By.id("gender"));
-        Select s2=new Select(e9);
-        s2.selectByVisibleText("Male");
-    WebElement e10=driver.findElement(By.id("relationship"));
-        Select s3=new Select(e10);
-        s3.selectByVisibleText("Son");
-    driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-my-dependents-form/div/div/form/div[2]/button[1]")).click();   
-    
-    //Continue   
-    new WebDriverWait(driver, 40).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]")));
-    WebElement element12=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]"));
-    assertNotNull(element12);
-    element12.click();
-    element12.click();
-    
-     //Go to Confirmation
-    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a")));
-    WebElement element17=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a"));
-    assertNotNull(element17);
-    element17.click();
-    element17.click();
-    
-    //Close
-    new WebDriverWait(driver, 40).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-more-enrollment-modal/div/div/div[3]/button[2]")));
-    WebElement element18=driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-more-enrollment-modal/div/div/div[3]/button[2]"));
-    //assertNotNull(element18);
-    element18.click();
-    element18.click();
+//     //enroll   
+//    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//    driver.findElement(By.partialLinkText("Enroll Now")).click();
+//    
+//    //driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+//    
+//    //click Change button
+//    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"btnEnroll\"]")));
+//    driver.findElement(By.id("btnEnroll")).click();
+//    
+//    
+//    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+//    WebElement element5=driver.findElement(By.name("chkAcknowledgement"));
+//     assertNotNull(element5);
+//    element5.click();
+//    
+//    driver.findElement(By.partialLinkText("Save and Continue")).click();
+//      //add emergency contact
+//    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);  
+//    driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/div/div/div[2]/app-emergency-contacts-enrollment/div/app-emergency-contacts/div/a")).click();   
+//    driver.findElement(By.name("lastName")).sendKeys("Jonson");
+//    driver.findElement(By.name("firstName")).sendKeys("Mike");
+//    driver.findElement(By.name("relation")).sendKeys("Supose");
+//    driver.findElement(By.name("homePhone")).sendKeys("7774445566");
+//    driver.findElement(By.name("homeIntCode")).sendKeys("777");
+//    driver.findElement(By.name("homeComments")).sendKeys("Test Home Comment");
+//    driver.findElement(By.name("workPhone")).sendKeys("7776667788");
+//    driver.findElement(By.name("workIntCode")).sendKeys("777");
+//    driver.findElement(By.name("workComments")).sendKeys("Test Work Comment");
+//    driver.findElement(By.name("mobilePhone")).sendKeys("7770008899");
+//    driver.findElement(By.name("mobileIntCode")).sendKeys("777");
+//    driver.findElement(By.name("mobileComments")).sendKeys("Test Mobile Comment");
+//    driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-emergency-contacts-form-modal/form/div/div/div[3]/button[1]")).click();
+//
+//    WebElement element6=driver.findElement(By.partialLinkText("Save and Continue"));
+//     assertNotNull(element6);
+//    element6.click();
+//    
+//      //add dependent
+//    WebElement element7=driver.findElement(By.id("submitButton"));
+//     assertNotNull(element7);
+//    element7.click();
+//    WebElement e8=driver.findElement(By.id("foreignNational"));
+//        Select s1=new Select(e8);
+//        s1.selectByVisibleText("Yes");
+//    driver.findElement(By.id("ssn")).sendKeys("111444459");
+//    driver.findElement(By.id("firstName")).sendKeys("Michel");
+//    driver.findElement(By.id("lastName")).sendKeys("Thomson");
+//    driver.findElement(By.id("birthDate")).sendKeys("07/03/1990");
+//    WebElement e9=driver.findElement(By.id("gender"));
+//        Select s2=new Select(e9);
+//        s2.selectByVisibleText("Male");
+//    WebElement e10=driver.findElement(By.id("relationship"));
+//        Select s3=new Select(e10);
+//        s3.selectByVisibleText("Son");
+//    driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-my-dependents-form/div/div/form/div[2]/button[1]")).click();   
+//    
+//    //Continue   
+//    new WebDriverWait(driver, 40).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]")));
+//    WebElement element12=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a[2]"));
+//    assertNotNull(element12);
+//    element12.click();
+//    element12.click();
+//    
+//     //Go to Confirmation
+//    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a")));
+//    WebElement element17=driver.findElement(By.xpath("//*[@id=\"wrapper\"]/section/div/ng-component/app-navigation-bar/div/div/div/div/div/div[2]/a"));
+//    assertNotNull(element17);
+//    element17.click();
+//    element17.click();
+//    
+//    //Close
+//    new WebDriverWait(driver, 40).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-more-enrollment-modal/div/div/div[3]/button[2]")));
+//    WebElement element18=driver.findElement(By.xpath("/html/body/app-root/ng-component/app-modal/div/app-more-enrollment-modal/div/div/div[3]/button[2]"));
+//    //assertNotNull(element18);
+//    element18.click();
+//    element18.click();
     
     
 //    //let's do it
