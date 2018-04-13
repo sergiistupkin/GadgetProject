@@ -76,37 +76,37 @@ public class ID4QuickSearchTest {
     System.out.println("the element name "+element3.getText());
     assertNotNull(element3);
     element3.click();
-    
-    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-    
-//    WebDriverWait wait = new WebDriverWait(driver, 10);
-//    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"widgetsColumn2\"]/app-document-search-panel/app-document-search-shared/div/div[2]/form/div/div/div[1]/input")));
-
- 
-   
-   WebElement element4=driver.findElement(By.xpath("//input[@name='searchText']"));
-   List <WebElement> list=driver.findElements(By.xpath("//*[@id=\"widgetsColumn2\"]/app-document-search-panel/app-document-search-shared/div/div[2]/form/div/div/div[1]/input"));
-   for(WebElement w:list)
-             System.out.println("the result:"+ w.getText());
- assertNotNull(element4);
- element4.sendKeys("doc");
- 
-  WebElement element5=driver.findElement(By.xpath("//*[@id=\"widgetsColumn2\"]/app-document-search-panel/app-document-search-shared/div/div[2]/form/div/div/button"));
-    element5.click();
-    
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"result-entry\"]/td[1]/a")));
-    WebElement element6=driver.findElement(By.xpath("//*[@id=\"result-entry\"]/td[1]/a"));
-    element6.click();
-    
-
-//String bodyText = driver.findElement(By.tagName("body")).getText();
-//Assert.assertTrue("Text not found!", bodyText.contains("Quick Document Search"));
-
-List<WebElement> elementsList = driver.findElements(By.tagName("input"));
-System.out.println("Links count is: "+elementsList.size());
-
-System.out.println("Test Done");
-
+//    
+//    driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+//    
+////    WebDriverWait wait = new WebDriverWait(driver, 10);
+////    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"widgetsColumn2\"]/app-document-search-panel/app-document-search-shared/div/div[2]/form/div/div/div[1]/input")));
+//
+// 
+//   
+//   WebElement element4=driver.findElement(By.xpath("//input[@name='searchText']"));
+//   List <WebElement> list=driver.findElements(By.xpath("//*[@id=\"widgetsColumn2\"]/app-document-search-panel/app-document-search-shared/div/div[2]/form/div/div/div[1]/input"));
+//   for(WebElement w:list)
+//             System.out.println("the result:"+ w.getText());
+// assertNotNull(element4);
+// element4.sendKeys("doc");
+// 
+//  WebElement element5=driver.findElement(By.xpath("//*[@id=\"widgetsColumn2\"]/app-document-search-panel/app-document-search-shared/div/div[2]/form/div/div/button"));
+//    element5.click();
+//    
+//    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//    new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"result-entry\"]/td[1]/a")));
+//    WebElement element6=driver.findElement(By.xpath("//*[@id=\"result-entry\"]/td[1]/a"));
+//    element6.click();
+//    
+//
+////String bodyText = driver.findElement(By.tagName("body")).getText();
+////Assert.assertTrue("Text not found!", bodyText.contains("Quick Document Search"));
+//
+//List<WebElement> elementsList = driver.findElements(By.tagName("input"));
+//System.out.println("Links count is: "+elementsList.size());
+//
+//System.out.println("Test Done");
+//
     }
 }
